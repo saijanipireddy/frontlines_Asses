@@ -37,7 +37,7 @@ const AdminPanel = () => {
 const fetchCompanies = async () => {
   try {
     setLoading(true);
-    const response = await fetch('http://localhost:5000/api/companies');
+    const response = await fetch('https://frontlines-backend.onrender.com/api/companies');
     
     if (!response.ok) {
       throw new Error('Failed to fetch companies');
@@ -62,7 +62,7 @@ const handleAddCompany = async (e) => {
   setLoading(true);
   
   try {
-    const response = await fetch('http://localhost:5000/api/companies', {
+    const response = await fetch('https://frontlines-backend.onrender.com/api/companies', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -108,7 +108,7 @@ const handleUpdateCompany = async (e) => {
   setLoading(true);
   
   try {
-    const response = await fetch(`http://localhost:5000/api/companies/${editingCompany.id}`, {
+    const response = await fetch(`https://frontlines-backend.onrender.com/api/companies/${editingCompany.id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -158,7 +158,7 @@ const handleDeleteCompany = async (companyId) => {
 
   setLoading(true);
   try {
-    const response = await fetch(`http://localhost:5000/api/companies/${companyId}`, {
+    const response = await fetch(`https://frontlines-backend.onrender.com/api/companies/${companyId}`, {
       method: 'DELETE',
     });
 
